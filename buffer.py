@@ -22,10 +22,14 @@
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QPushButton
 from core.buffer import Buffer
+from core.utils import get_emacs_var
 
 class AppBuffer(Buffer):
     def __init__(self, buffer_id, url, arguments):
         Buffer.__init__(self, buffer_id, url, arguments, True)
 
         self.add_widget(QPushButton("Hello, EAF hacker, it's working!!!"))
-        self.buffer_widget.setStyleSheet("font-size: 100px")
+        self.buffer_widget.setStyleSheet("background: {}; color: {}; font-size: 100px;".format(
+            get_emacs_var("eaf-emacs-theme-background-color"),
+            get_emacs_var("eaf-emacs-theme-foreground-color")
+        ))
