@@ -33,8 +33,7 @@ class AppBuffer(Buffer):
 
     @interactive
     def update_theme(self):
-        self.theme_foreground_color = get_emacs_theme_foreground()
-        self.theme_background_color = get_emacs_theme_background()
+        super().update_theme()
 
         self.background_color = QColor(self.theme_background_color)
         self.buffer_widget.setStyleSheet("background-color: {};".format(self.theme_background_color))
