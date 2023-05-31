@@ -22,7 +22,7 @@
 from PyQt6.QtGui import QColor
 from PyQt6.QtWidgets import QPushButton
 from core.buffer import Buffer
-from core.utils import get_emacs_theme_foreground, get_emacs_theme_background, interactive
+from core.utils import *
 
 class AppBuffer(Buffer):
     def __init__(self, buffer_id, url, arguments):
